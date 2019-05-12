@@ -8,7 +8,7 @@ class ShoppingList {
     }
 
     removeItems(...itemsToRemove) {
-        for (let i = 0; i < itemsToRemove; i++) {
+        for (let i = 0; i < itemsToRemove.length; i++) {
             let itemToRemove = itemsToRemove[i];
 
             for (let j = 0; j < this.items.length; j++) {
@@ -38,13 +38,13 @@ const shoppingList = new ShoppingList ([
 
 shoppingList.addItem(new Item('бананы', 60));
 
-// let onDiet = false;
-// let isVegan = true;
+let onDiet = true;
+let isVegan = false;
 
-// if (onDiet) {
-//     shoppingList.removeItems('бананы');
-// } else if (isVegan) {
-//     shoppingList.removeItems('молоко', 'яйца');
-// }
+if (onDiet) {
+    shoppingList.removeItems('бананы');
+} else if (isVegan) {
+    shoppingList.removeItems('молоко', 'яйца');
+}
 
 console.log(shoppingList);
